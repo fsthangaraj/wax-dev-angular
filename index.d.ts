@@ -4,4 +4,4 @@ export interface RunnerOptions {
   }
   
   export function runner(code: string, options: RunnerOptions): Promise<any>;
-  export function startObserver(options: RunnerOptions): MutationObserver;
+  export function waxObserver(options: RunnerOptions): MutationObserver;
