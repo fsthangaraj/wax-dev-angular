@@ -1,4 +1,5 @@
 import {apiHtml} from './utils/api.js';
+import readUserConfig from './utils/config.js';
 
 interface Options {
   apiKey?: string;
@@ -13,7 +14,6 @@ interface Config {
 const runner = function (code: String, options: Options) {
   let config: Config = {};
   if (!options || !options.apiKey) {
-    const readUserConfig = require('./utils/config.js');
     config = readUserConfig();
   } else {
     config = options;
