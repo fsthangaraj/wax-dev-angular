@@ -9,6 +9,7 @@
     "accessibility",
     "test"
   ],
+  "types": "index.d.ts",
   "author": "shritk",
   "license": "MPL-2.0",
   "repository": {
