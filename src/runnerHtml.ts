@@ -1,23 +1,12 @@
 import {apiHtml} from './utils/api.js';
-import readUserConfig from './utils/config.js';
 
 interface Options {
   apiKey?: string;
   rules?: Array<string>;
 }
 
-interface Config {
-  apiKey?: string;
-  rules?: Array<string>;
-}
-
 const runner = function (code: String, options: Options) {
-  let config: Config = {};
-  if (!options || !options.apiKey) {
-    config = readUserConfig();
-  } else {
-    config = options;
-  }
+  let config: Options = options;
   if (!config.apiKey || !config.apiKey.length) {
     throw new Error(
       'API Key is required to run wax-dev. Please reach out to https://developer.wallyax.com/ to get your API Key.'

@@ -18,7 +18,7 @@ function readUserConfig() {
       try {
         const config = require(configPath);
         return config;
-      } catch (error: any) {
+      } catch (error) {
         throw new Error(
           `Configuration file is invalid at ${configPath}: ${error.message}`
         );
