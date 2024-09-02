@@ -1,5 +1,5 @@
 
-export interface Options {
+export default interface Options {
     apiKey?: string;
     rules?: Array<string>;
   }
