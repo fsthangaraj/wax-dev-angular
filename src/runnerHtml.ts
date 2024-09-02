@@ -1,5 +1,14 @@
-const {apiHtml}= require('./utils/api.js');
-import { Options, Config } from '../types/index';
+import {apiHtml} from './utils/api.js';
+
+interface Options {
+  apiKey?: string;
+  rules?: Array<string>;
+}
+
+interface Config {
+  apiKey?: string;
+  rules?: Array<string>;
+}
 
 const runner = function (code: String, options: Options) {
   let config: Config = {};

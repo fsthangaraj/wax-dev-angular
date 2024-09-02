@@ -18,7 +18,7 @@ function readUserConfig() {
       try {
         const config = require(configPath);
         return config;
-      } catch (error) {
+      } catch (error: any) {
         throw new Error(
           `Configuration file is invalid at ${configPath}: ${error.message}`
         );
@@ -30,4 +30,4 @@ function readUserConfig() {
     }
   }
   
-  module.exports = readUserConfig;
+export default readUserConfig;
