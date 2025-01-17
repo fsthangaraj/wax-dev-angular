@@ -1,3 +1,4 @@
+const {apiHtml}= require('./src/utils/api.js');
 const runner = (code, options) => {
   const styles = {
     Severe: 'color: #ffb3b3; font-weight: bold;',
@@ -14,10 +15,11 @@ const runner = (code, options) => {
     }
 
     try {
-      fetch("https://gateway.wallyax.com/wallyax/audit-lint-html/2.0" + '?apiKey=' + options.apiKey, {
+      fetch(apiHtml, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `${options.apiKey}`,
         },
         body: JSON.stringify({ element: code, rules: options.rules, isLinter: "false" }),
       })
