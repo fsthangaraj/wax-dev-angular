@@ -13,12 +13,13 @@ const runner = function (code: String, options: Options) {
     );
   }
   return new Promise((resolve, reject) => {
-    fetch(apiHtml + '?apiKey=' + config.apiKey, {
+    fetch(apiHtml, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `${config.apiKey}`,
       },
-      body: JSON.stringify({ element: code, rules: config.rules, isLinter:"false" }),
+      body: JSON.stringify({ element: code, rules: config.rules, isLinter: "false" }),
     })
       .then((response) => response.json())
       .then((data) => {
